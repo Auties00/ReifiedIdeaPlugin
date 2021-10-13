@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<idea-plugin>
+    <id>it.auties.reified-plugin</id>
+    <name>Reified</name>
+    <description>Reified for type parameters in Java 11 and upwards</description>
+    <version>1.0</version>
+    <vendor email="alautiero@gmail.com">Auties00</vendor>
+    <category>Tools Integration</category>
+
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.idea</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <lang.psiAugmentProvider implementation="it.auties.reified.ReifiedPlugin"/>
+        <completion.skip implementation="it.auties.reified.ReifiedCompletion"/>
+        <annotator language="JAVA" implementationClass="it.auties.reified.ReifiedAnnotator"/>
+    </extensions>
+</idea-plugin>
